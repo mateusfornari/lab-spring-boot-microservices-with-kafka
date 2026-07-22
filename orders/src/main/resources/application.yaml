@@ -1,3 +1,31 @@
 spring:
   application:
     name: orders
+  datasource:
+    url: jdbc:postgresql://localhost:5555/ecommerce_orders
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    fail-on-missing-locations: true
+
+server:
+  port: 8083
+
+ecommerce:
+  orders:
+    clients:
+      products:
+        url: 'http://localhost:8081/products'
+      customers:
+        url: 'http://localhost:8082/customers'

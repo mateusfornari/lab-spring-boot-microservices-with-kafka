@@ -1,0 +1,5 @@
+CREATE TABLE tb_products (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    unit_amount DECIMAL(16,2) NOT NULL
+);
